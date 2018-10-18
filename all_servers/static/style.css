@@ -1,0 +1,37 @@
+.form {
+    padding: 30px;
+    margin: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.input-form {
+    margin: 10px;
+}
+
+.resultBox {
+    padding: 30px;
+    margin: 10px;
+    border: 1px solid yellowgreen;
+    border-radius: 5px;
+    font-size: 33px;
+    color: purple;
+}
+
+button {
+    background-color: #16c442;
+    padding: 15px;
+    font-size: 15px;
+    border: 1px solid limegreen;
+    border-radius: 3px;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #11a436;
+}
+
+h3 {
+    margin-left: 20px;
+}

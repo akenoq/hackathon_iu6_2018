@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pi Requester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>GET-запрос</h3>
+    <div class="form">
+        <div class="input-form">
+            <label>
+                Введите A
+                <input id="aInput" type="text">
+            </label>
+        </div>
+        <div class="input-form">
+            <label>
+                Введите B
+                <input id="bInput" type="text">
+            </label>
+        </div>
+        <button id="summaBtn">Посчитать сумму на Pi</button>
+    </div>
+    <h3>POST-запрос</h3>
+    <div class="form">
+        <div class="input-form">
+            <label>
+                Введите имя
+                <input id="nameInput" type="text">
+            </label>
+        </div>
+        <div class="input-form">
+            <label>
+                Введите возраст
+                <input id="ageInput" type="text">
+            </label>
+        </div>
+        <button id="studentBtn">Отправить на Pi</button>
+    </div>
+    <h3>Ответ от Pi</h3>
+    <div id="resultBox" class="resultBox"></div>
+    <script src="main.js"></script>
+</body>
+</html>
