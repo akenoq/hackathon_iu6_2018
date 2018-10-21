@@ -42,18 +42,12 @@ app.get('/api/hello', function (req, res) {
 // с параметрамми 'a' и 'b' (?a=5&b=33 в url)
 // http://localhost:5005/api/summa?a=5&b=33 => результат 'a + b = 58'
 app.get('/api/summa', (req, res) => {
-    console.log(req.query);
-    let body = '';
-    req.on('data', (data) => {
-        body += data;
-    }).on('end', () => {
-        const a = parseInt(req.query.a); // 3
-        const b = parseInt(req.query.b); // 5
-        const answer = a + b; // 8
-        console.log(body + '     A: ' + a + '  B: ' + b + '  Answer: '  + answer); // A: 3  B: 5   Answer: 8
-        res.status(200);
-        res.end(JSON.stringify({"summa":answer})); // '8'
-    });
+    const a = parseInt(req.query.a); // 3
+    const b = parseInt(req.query.b); // 5
+    const answer = a + b; // 8
+    console.log('A: ' + a + '  B: ' + b + '  Answer: '  + answer); // A: 3  B: 5   Answer: 8
+    res.status(200);
+    res.end(JSON.stringify({"summa":answer})); // '8'
 });
 
 // получаем POST-запрос в формате JSON и овечаем в формате JSON {"nickname":"Bob","age":17}
@@ -74,12 +68,7 @@ app.post('/api/student', (req, res) => {
 
 // неверный url запроса
 app.get('/*', (request, response) => {
-    let body = "";
-    request.on('data', (data) => {
-        body += data;
-    }).on('end', () => {
-        response.end("неверный запрос");
-    });
+    response.end("incorrect request");
 });
 
 app.post('/*', (request, response) => {
@@ -87,7 +76,7 @@ app.post('/*', (request, response) => {
     request.on('data', (data) => {
         body += data;
     }).on('end', () => {
-        response.end("неверный запрос");
+        response.end("incorrect request");
     });
 });
 
